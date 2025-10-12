@@ -1,0 +1,194 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+############################################################
+# General Configuration
+############################################################
+site_name: battleWarden Documentation
+site_author: Soner Boztas
+copyright: Copyright &copy; 2010-[Year] Soner Boztas & Contributors. Last build on [Date]. Revision&colon; [CommitHash]. Branch&colon; [Branch].
+
+site_url: https://docs.battlewarden.net
+repo_url: https://github.com/soner-boztas/battlewarden-docs/
+edit_uri: edit/main/docs/
+
+site_dir: !ENV [ DOCS_BUILD_FOLDER_NAME ]
+
+############################################################
+# Navigation
+############################################################
+nav:
+  - Home: index.md
+  - Getting Started:
+      - getting-started/index.md
+      - Introduction: getting-started/introduction.md
+      - Features: getting-started/features.md
+      - System Prerequisites: getting-started/system-prerequisites.md
+      - Installation: getting-started/installation.md
+  - Core Functionalities:
+      - core-functionalities/index.md
+      - Basic:
+          - Overview of the Main Application Window: core-functionalities/basic/overview-main-application-window.md
+          - Managing Servers: core-functionalities/basic/managing-servers.md
+          - Connecting to a Server: core-functionalities/basic/connecting-to-a-server.md
+          - Kicking &amp; Banning: core-functionalities/basic/kicking-and-banning.md
+      - Advanced:
+          - core-functionalities/advanced/using-the-cli.md
+          - core-functionalities/advanced/debug-mode.md
+      - Database:
+          - core-functionalities/database/index.md
+          - Introduction: core-functionalities/database/introduction.md
+          - Configuration: core-functionalities/database/configuration.md
+          - Importing/Exporting: core-functionalities/database/importing-exporting.md
+
+  - battleWarden&colon;Spy:
+      - battlewarden-spy/index.md
+      - Configuration: battlewarden-spy/configuration.md
+      - Configuring Logs: battlewarden-spy/configuring-logs.md
+      - Configuring Triggers: battlewarden-spy/configuring-triggers.md
+  - battleWarden&colon;Script:
+      - battlewarden-script/index.md
+      - battlewarden-script/configuring-start-connect-exit-scripts.md
+      - API Reference:
+          - battlewarden-script/api-reference/tables.md
+          - battlewarden-script/api-reference/list.md
+          - battlewarden-script/api-reference/console-io.md
+          - battlewarden-script/api-reference/file-io.md
+          - battlewarden-script/api-reference/process.md
+          - battlewarden-script/api-reference/server.md
+          - battlewarden-script/api-reference/gui.md
+  - FAQ:
+      - faq/index.md
+  - Release Notes:
+      - release-notes/index.md
+  - Contributing:
+      - contributing/index.md
+      - Asking a Question: contributing/asking-a-question.md
+      - Reporting a Bug: contributing/reporting-a-bug.md
+      - Requesting a New Feature: contributing/requesting-a-new-feature.md
+      - Making a Donation: contributing/making-a-donation.md
+  - License:
+      - license/index.md
+
+############################################################
+# Theme Configuration
+############################################################
+theme:
+  name: material
+  language: en
+
+  font:
+    text: Open Sans
+    code: Roboto Mono
+
+  logo: assets/battleWarden-logo.png
+  favicon: assets/battleWarden-favicon.ico
+
+  icon:
+    edit: material/pencil
+    view: material/eye
+
+  palette:
+    # Palette toggle for light mode.
+    - scheme: battlewarden-light
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode.
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.tabs
+    - navigation.footer
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - content.tooltips
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+    - search
+    - search.suggest
+    - search.highlight
+    - search.share
+
+############################################################
+# Plugins
+############################################################
+plugins:
+  - search
+  - table-reader
+  - privacy:
+      enabled: !ENV [ IS_BUILD, false ]
+  - git-revision-date-localized:
+      enabled: !ENV [ IS_BUILD, false ]
+      enable_creation_date: true
+  - git-committers:
+      enabled: !ENV [ IS_BUILD, false ]
+      repository: soner-boztas/battlewarden-docs
+      branch: main
+
+############################################################
+# Markdown Extensions
+############################################################
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.snippets:
+      auto_append:
+        - glossary.md
+        - common_links.md
+
+############################################################
+# Extras
+############################################################
+extra:
+  # Disable the "Made with Material for MkDocs" notice.
+  generator: false
+
+  social:
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/solicusoftware
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/86189712/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCUN8s7e_rPTEs7FVG3naw2w
+
+extra_css:
+  - stylesheets/extra.css
