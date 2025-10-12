@@ -4,7 +4,7 @@
 # General Configuration
 ############################################################
 site_name: battleWarden Documentation
-site_author: Soner Boztas
+site_author: Soner Boztas & Contributors
 copyright: Copyright &copy; 2010-[Year] Soner Boztas & Contributors. Last build on [Date]. Revision&colon; [CommitHash]. Branch&colon; [Branch].
 
 site_url: https://docs.battlewarden.net
