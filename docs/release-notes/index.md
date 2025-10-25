@@ -4,6 +4,12 @@ hide:
 ---
 # Release Notes
 
+## Version 1.2.2 (2025-10-26)
+
+- `Enhancement` Overall performance improvements
+- `Other` battleWarden now has a new sponsor: [https://zap-hosting.com](https://zap-hosting.com). The battleWarden UI contains some affiliate links to their hosting services. We highly appreciate users supporting us by using these links when purchasing game server hosting services.
+
+
 ## Version 1.2.1 (2025-10-05)
 
 - `Fix` SysTray messages not popping up through battleWarden:Script
